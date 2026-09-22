@@ -1,0 +1,11 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+Setups.zip
+Google_Cloud_Signup.pdf
+Google_Python.pdf
+Google_NodeJS.pdf
+GCP_G_Suite_Workaround.pdf
