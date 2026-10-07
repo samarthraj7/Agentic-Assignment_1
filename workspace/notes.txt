@@ -1,0 +1,6 @@
+CSCI 599 Assignment 1 workspace.
+
+USC mascot: Trojan
+Cloud Run region for this project: us-west1
+GCP project id: csci-599-agenticai
+Agent framework: LangGraph + FastAPI

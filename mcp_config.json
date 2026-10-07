@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${FILESYSTEM_ROOT}"],
+      "cwd": "${APP_ROOT}"
+    },
+    "tavily": {
+      "transport": "http",
+      "url": "https://mcp.tavily.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${TAVILY_API_KEY}"
+      }
+    },
+    "open-meteo": {
+      "transport": "stdio",
+      "command": "${PYTHON}",
+      "args": ["-m", "mcp_weather_server"]
+    }
+  }
+}

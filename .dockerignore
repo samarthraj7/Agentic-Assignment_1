@@ -1,0 +1,10 @@
+.venv
+.git
+.env
+__pycache__
+*.pdf
+Setups
+Setups.zip
+CODEX_WORKFLOW.md
+.DS_Store
+*.pyc
