@@ -239,6 +239,17 @@ async def validation_handler(_, exc: RequestValidationError) -> JSONResponse:
     return JSONResponse({"response": f"Invalid request: {exc.errors()}"}, status_code=400)
 
 
+@app.get("/")
+async def root() -> dict[str, str]:
+    return {
+        "service": "CSCI 599 Assignment 1 agent",
+        "chat": 'POST /chat {"query": string, "session_id": string}',
+        "health": "GET /health",
+        "docs": "GET /docs",
+        "latency": "First request after idle can take ~30s (cold start); tool queries usually 5-15s.",
+    }
+
+
 @app.get("/health")
 async def health() -> dict[str, Any]:
     inventory = getattr(app.state, "mcp_inventory", {})

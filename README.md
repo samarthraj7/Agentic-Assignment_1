@@ -53,6 +53,11 @@ Region: `us-west1`. Project: `csci-599-agenticai`. Leave the service running
 
 Live URL: https://csci599-a1-881242810047.us-west1.run.app
 
+Expect the first request after idle to take ~30s (Cloud Run cold start plus
+MCP server startup). After that, plain answers take a few seconds and tool
+queries usually 5–15s. `/chat` returns one JSON body when the agent finishes,
+so `curl` prints nothing until then. Open `/docs` in a browser to try it.
+
 ## Cost
 
 - Cloud Run: scale-to-zero, 512Mi, max 1 instance. Course note from CSCI 571:
@@ -158,4 +163,5 @@ flowchart TB
 {"response": "string"}
 ```
 
-`GET /health` lists which MCP servers answered `tools/list`.
+`GET /health` lists which MCP servers answered `tools/list`. `GET /` returns
+a short usage summary.

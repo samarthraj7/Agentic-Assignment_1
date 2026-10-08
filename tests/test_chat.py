@@ -61,6 +61,8 @@ def test_health_and_chat_contract() -> None:
         for name in ("filesystem", "tavily", "open-meteo"):
             assert name in body["mcp_servers"]
 
+        assert "chat" in client.get("/").json()
+
         bad = client.post("/chat", json={"query": ""})
         assert bad.status_code == 400
         assert "response" in bad.json()
