@@ -58,6 +58,10 @@ MCP server startup). After that, plain answers take a few seconds and tool
 queries usually 5–15s. `/chat` returns one JSON body when the agent finishes,
 so `curl` prints nothing until then. Open `/docs` in a browser to try it.
 
+Memory lives in the running instance (`MemorySaver`, max 1 instance). Right
+after a cold start, Cloud Run sometimes replaces the new instance within about
+a minute, which clears memory once; see `PROCESS_LOG.md` debugging entry 10.
+
 ## Cost
 
 - Cloud Run: scale-to-zero, 512Mi, max 1 instance. Course note from CSCI 571:
